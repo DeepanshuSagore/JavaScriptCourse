@@ -1,0 +1,30 @@
+<html>
+<head>
+  <title>Document</title>
+  <style>
+    .js-button{
+      border: none;
+      border-radius: 30px;
+      padding: 7.5px 45px 7.5px 45px;
+      background-color:rgb(255, 216, 20);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button class="js-button">Test</button>
+</body>
+<script>
+  const jsbutton = document.querySelector('.js-button')
+
+  jsbutton.classList.contains('js-button')?console.log("Contains"):console.log("Does not contains")
+
+  // if (jsbutton.classList.contains('js-button')){
+  //   console.log("Contains")
+  // }
+  // else{
+  //   console.log("Does not contains")
+  // }
+  
+</script>
+</html>
