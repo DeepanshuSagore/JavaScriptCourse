@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+  <body>
+    <button 
+      onclick="console.log(`Cart Quantity = ${cartQuantity}`);">
+        Show Quantity
+    </button>
+
+    <button 
+      onclick="updateCartQuantity(1);
+        ">Add to Cart
+    </button>
+
+    <button
+      onclick="updateCartQuantity(2);
+      ">
+        +2
+    </button>
+
+    <button
+      onclick="updateCartQuantity(3);">
+        +3
+    </button>
+
+    <button
+      onclick = "updateCartQuantity(4);
+      ">
+      +4
+    </button>
+
+    <button
+      onclick = "updateCartQuantity(5);">
+      +5
+    </button>
+
+    <button
+      onclick="
+      cartQuantity = 0
+      console.log('Cart Quantity has been Reset to 0');">
+        Reset
+   </button>
+
+    <button
+      onclick="updateCartQuantity(-1);">
+        Remove
+   </button>
+
+    <button
+      onclick="updateCartQuantity(-2);">
+        -2
+   </button>
+
+    <button
+      onclick="updateCartQuantity(-3);">
+        -3
+   </button>
+    <script>
+      let cartQuantity = 0;
+      function updateCartQuantity(input){
+        if(cartQuantity + input > 10){
+          alert('Cart can only contain 10 items');
+          return;
+        } 
+        if (cartQuantity + input < 0){
+          alert('Cart cannot have less than 0 items');
+          return;
+        } 
+        
+          cartQuantity += input;
+          console.log(`Cart Quantity = ${cartQuantity}`);
+      }
+      
+    </script>
+  </body>
+</html>

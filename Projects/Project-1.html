@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Variables</title>
+  </head>
+  <body>
+    <button 
+      onclick="console.log(`Cart Quantity = ${cartQuantity}`);">
+        Show Quantity
+    </button>
+
+    <button 
+      onclick="
+      //cartQuantity = cartQuantity + 1;
+      cartQuantity + 1 <= 10 ? cartQuantity++ : alert('Cart is FUll')
+      console.log(`Cart Quantity = ${cartQuantity}`);">
+        Add to Cart
+    </button>
+
+    <button
+      onclick="
+      //cartQuantity = cartQuantity + 2;
+      cartQuantity + 2 <= 10 ?cartQuantity += 2 : alert('Cart is FUll')
+      console.log(`Cart Quantity = ${cartQuantity}`);">
+        +2
+    </button>
+
+    <button
+      onclick="
+      //cartQuantity = cartQuantity + 3;
+      cartQuantity + 3 <= 10 ?cartQuantity += 3 : alert('Cart is FUll')
+      console.log(`Cart Quantity = ${cartQuantity}`);">
+        +3
+    </button>
+
+    <button
+      onclick = "
+      cartQuantity + 4 <= 10 ?cartQuantity += 4 : alert('Cart is FUll')
+      console.log(`Cart Quantity = ${cartQuantity}`)">
+      +4
+    </button>
+
+    <button
+      onclick = "
+      cartQuantity + 5 <= 10 ?cartQuantity += 5 : alert('Cart is FULL, Maximum 10')
+      console.log(`Cart Quantity = ${cartQuantity}`)">
+      +5
+    </button>
+
+    <button
+      onclick="
+      cartQuantity = 0
+      console.log('Cart Quantity has been Reset to 0');">
+        Reset
+   </button>
+
+    <button
+      onclick="
+      cartQuantity - 1 >= 0 ?  cartQuantity -- : alert('Cannot be less than 0');
+      console.log(`Cart Quantity = ${cartQuantity}`);">
+        Remove
+   </button>
+
+    <button
+      onclick="
+      cartQuantity - 2 >= 0 ?  cartQuantity -= 2 : alert('Cannot be less than 0');
+      console.log(`Cart Quantity = ${cartQuantity}`);">
+        -2
+   </button>
+
+    <button
+      onclick="
+      cartQuantity - 3 >= 0 ?  cartQuantity -= 3 : alert('Cannot be less than 0');
+      console.log(`Cart Quantity = ${cartQuantity}`);">
+        -3
+   </button>
+    <script>
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>

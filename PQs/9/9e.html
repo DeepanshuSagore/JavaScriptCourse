@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>9e</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter your name" class="js-name" onkeydown="handleKeyDown(event)">
+  <button onclick="printName()">Submit</button>
+  <p class="js-result"></p>
+
+  <script>
+
+    function handleKeyDown(event){
+      event.key === 'Enter' ? printName(): null
+    }
+    function printName(){
+      const name = document.querySelector('.js-name').value;
+      document.querySelector('.js-result').innerHTML = `Your name is ${name}`
+    }
+  </script>
+</body>
+</html>

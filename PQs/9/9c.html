@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <title>9c</title>
+</head>
+<body>
+  <button onclick="printChosen('HEADS')">HEADS</button>
+  <button onclick="printChosen('TAILS')">TAILS</button>
+  <p class="js-result"></p>
+
+  <script>
+    function printChosen(playerMove){
+      playerMove === 'HEADS' ? 
+        document.querySelector('.js-result').innerText = 'You Chose : HEADS'
+        :document.querySelector('.js-result').innerText = 'You Chose : TAILS'
+    }
+  </script>
+</body>
+</html>

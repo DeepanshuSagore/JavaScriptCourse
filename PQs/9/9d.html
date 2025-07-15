@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <title>9d</title>
+</head>
+<body>
+  <input type="text" class="js-input">
+  <button onclick="printName()">Submit</button>
+  <p class="js-result"></p>
+
+  <script>
+    function printName(){
+      const name = document.querySelector('.js-input');
+      const place = document.querySelector('.js-result')
+      const nameValue = name.value;
+      place.innerHTML = `Your Name is ${nameValue}`;
+    }
+  </script>
+</body>
+</html>

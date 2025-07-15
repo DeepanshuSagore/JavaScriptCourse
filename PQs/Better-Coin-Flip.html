@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Side?</title>
+</head>
+<body>
+  <button onclick="playGame('Heads')">HEADS</button>
+  <button onclick="playGame('Tails')">TAILS</button>
+  <button onclick="
+    Score.losses = 0;
+    Score.wins = 0;
+    localStorage.removeItem('Score');
+  ">Reset Score</button>
+
+
+  <script>
+
+    let Score =  JSON.parse(localStorage.getItem('Score')) || {
+      wins : 0,
+      losses: 0
+    }
+    
+    function playGame(playerMove){
+      
+      computerMove = pickComputerMove();
+      let result = '';
+      playerMove === computerMove ? result = 'You win' : result = 'You Lose'
+
+      result === 'You win'? Score.wins += 1 : Score.losses += 1
+
+      localStorage.setItem('Score',JSON.stringify(Score))
+
+      alert(`You Picked ${playerMove}, Computer Picked ${computerMove}. ${result}
+      Wins: ${Score.wins}, Losses: ${Score.losses}`);
+    }
+    
+    function pickComputerMove(){
+      const randomNumber = Math.random();
+      let computerMove = '' 
+       randomNumber < 0.5 ? computerMove = 'Heads' : computerMove = 'Tails'
+
+      return computerMove;
+    }
+
+  </script>
+</body>
+</html>

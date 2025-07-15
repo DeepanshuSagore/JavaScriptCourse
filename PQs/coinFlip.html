@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Side?</title>
+</head>
+<body>
+  <button onclick="
+    const randNumber1 = Math.random();
+    let toss = '';
+    (randNumber1 <= 0.5) ? toss = 'Heads' : toss = 'Tails';
+    toss === 'Heads' ? alert('Won') : alert('Lost');
+    console.log(toss);
+    ">HEAD?</button>
+  <button onclick="
+    const randNumber2 = Math.random();
+    let toss1 = '';
+    (randNumber2 <= 0.5) ? toss1 = 'Heads' : toss1 = 'Tails';
+    toss1 === 'Tails' ? alert('Won') : alert('Lost')
+    console.log(toss1)
+    ">TAILS?</button>
+  <script>
+    const randNumber = Math.random();
+    (randNumber <= 0.5) ? console.log("Head") : console.log("Tail")
+  </script>
+</body>
+</html>

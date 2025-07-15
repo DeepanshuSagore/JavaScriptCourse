@@ -1,0 +1,62 @@
+<!DOCTYPE = html>
+  <head>
+    <title>7th Question</title>
+  </head>
+  <body>
+    <script>
+      function greet(yourName){
+        (!yourName)?console.log('Hi There'):console.log(`Hello ${yourName}`);
+      }
+      greet('Deepanshu');
+      greet();
+
+      function convertToFahrenheit(Celcius){
+        const Fahrehnheit = (Celcius * 9/5) + 32;
+        return Fahrehnheit;
+      }
+      
+      function convertToCelcius(Fahrehnheit){
+        const Celcius = (Fahrehnheit - 32) * 5/9
+        return Celcius;
+      }
+
+      function convertTemperature(degrees,unit){
+       return (unit === 'C')?convertToFahrenheit(degrees):convertToCelcius(degrees);
+      }
+
+      function convertLength(length,from,to){
+        if(from === 'miles' && to === 'Kms'){
+          return (`${length * 1.6} Kms`);
+        } else if (from === 'Kms' && to === 'miles'){
+          return (`${length / 1.6} Miles`);
+        } else if(from === to){
+          return (`${length} ${to}`)
+        } else if(from === 'miles' && to === 'ft'){
+          return (`${length * 5280} Ft`);
+        } else if (from === 'ft' && to === 'miles'){
+          return (`${length / 5280} Miles`);
+        } else if(from === 'Kms' && to === 'ft'){
+          return (`${length * 3281} Kms`);
+        } else if (from === 'ft' && to === 'Kms'){
+          return (`${length / 3281} Ft`);
+        } else {
+          return (`Invalid Unit :${from}`)
+        }
+      }
+
+      console.log(convertToCelcius(86));
+      console.log(convertToFahrenheit(25));
+      console.log(convertTemperature(25,'C'));
+      console.log(convertTemperature(86,'F'));
+      console.log(convertLength(50,'miles','Kms'));
+      console.log(convertLength(32,'Kms','miles'));
+      console.log(convertLength(50,'Kms','Kms'));
+      console.log(convertLength(50,'miles','miles'));
+      console.log(convertLength(5,'miles','Kms'));
+      console.log(convertLength(5,'miles','ft'));
+      console.log(convertLength(5,'Kms','ft'));
+      console.log(convertLength(5,'Lbs','ft'));
+
+    </script>
+  </body>
+</html>
