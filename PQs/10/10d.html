@@ -2,16 +2,38 @@
 <head>
   <title>10d</title>
   <style>
-    button{
+    .is-toggled{
       border: none;
       border-radius: 30px;
       padding: 7.5px 45px 7.5px 45px;
-      background-color:rgb(255, 216, 20);
+      background-color:black;
       cursor: pointer;
+      color: white;
+    }
+    .is-not-toggled{
+      border: none;
+      border-radius: 30px;
+      padding: 7.5px 45px 7.5px 45px;
+      background-color:rgb(135, 130, 130);
+      cursor: pointer;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <button>Add to Cart</button>
+  <button class="is-toggled" onclick="toggle()">GAMING</button>
 </body>
+<script>
+  const element = document.querySelector('.is-toggled')
+  function toggle(){
+    if (element.classList.contains('is-toggled')){
+      element.classList.add('is-not-toggled')
+      element.classList.remove('is-toggled')
+    }
+    else if(element.classList.contains('is-not-toggled')){
+      element.classList.remove('is-not-toggled')
+      element.classList.add('is-toggled')
+    }
+  }
+</script>
 </html>
