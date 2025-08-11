@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>10h</title>
+    <style>
+
+      body {
+        font-family: Arial;
+      }
+
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+
+      }
+
+      .ship-button{
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
+
+      .redText{
+        color: red;
+      }
+  
+    </style>
+  </head>
+  <body>
+    <center>
+    <h2>Amazon Shipping Calculator</h2>
+    <input 
+      placeholder="Cost of Order" 
+      class="js-cost-input cost-input" onkeydown="handleCostKeyDown(event)">
+
+    <button onclick="calculateTotal()" class="ship-button">Calculate</button>
+    <h1 class="js-result"></h1>
+    <p class="redText"></p>
+    
+    
+    <script>
+
+      function handleCostKeyDown(event){
+        if(event.key === 'Enter'){
+          calculateTotal();
+        }
+      }
+      function calculateTotal(){
+         const inputElement =document.querySelector('.js-cost-input');
+         let cost = +inputElement.value;
+         if(cost < 0){
+          redElement = document.querySelector('.redText')
+          redElement.innerHTML = "ERROR : cost cannot be less than 0"
+         }else{
+         cost = cost < 40 ? (cost + 10) : cost;
+         let roundedCost = Math.round(cost)
+
+         document.querySelector('.js-result').innerHTML = `$${roundedCost}`;}
+      }
+
+    </script>
+    </center>
+  </body>
+</html>
