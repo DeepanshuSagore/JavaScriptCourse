@@ -2,39 +2,43 @@
 <head>
   <title>10e</title>
   <style>
+
+    button{
+      border: none;
+      border-radius: 30px;
+      padding: 7.5px 45px 7.5px 45px;
+      background-color:rgb(218, 213, 213);
+      cursor: pointer;
+      color: black;
+    }
+
     .is-toggled{
-      border: none;
-      border-radius: 30px;
-      padding: 7.5px 45px 7.5px 45px;
-      background-color:black;
-      cursor: pointer;
+      background-color: black;
       color: white;
     }
-    .is-not-toggled{
-      border: none;
-      border-radius: 30px;
-      padding: 7.5px 45px 7.5px 45px;
-      background-color:rgb(135, 130, 130);
-      cursor: pointer;
-      color: white;
-    }
+
   </style>
 </head>
 <body>
-  <button class="is-toggled" onclick="toggle(this)">GAMING</button>
-  <button class="is-toggled" onclick="toggle(this)">MUSIC</button>
-  <button class="is-toggled" onclick="toggle(this)">TECH</button>
+  <button onclick="toggle(this)">GAMING</button>
+  <button onclick="toggle(this)">MUSIC</button>
+  <button onclick="toggle(this)">TECH</button>
 </body>
 <script>
   function toggle(button){
-    if (button.classList.contains('is-toggled')){
-      button.classList.add('is-not-toggled')
-      button.classList.remove('is-toggled')
-    }
-    else if(button.classList.contains('is-not-toggled')){
-      button.classList.remove('is-not-toggled')
+    if(!button.classList.contains('is-toggled')){
+      unToggleAll()
       button.classList.add('is-toggled')
     }
+    else{
+      button.classList.remove('is-toggled')
+    }
+  }
+  function unToggleAll(){
+    const previousButton = document.querySelector('.is-toggled')
+    if(previousButton){
+    previousButton.classList.remove('is-toggled'
+    )}
   }
 </script>
 </html>
